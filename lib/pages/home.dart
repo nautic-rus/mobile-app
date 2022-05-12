@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nautic_mobile_app/pages/select-drawing.dart';
 
 class Home extends StatefulWidget{
   const Home({Key? key}) : super(key: key);
@@ -9,24 +10,6 @@ class Home extends StatefulWidget{
 }
 class _Home extends State<StatefulWidget>{
 
-  bool searchEnabled = false;
-
-
-  void search(){
-    setState(() {
-      searchEnabled = !searchEnabled;
-    });
-  }
-  @override
-  void initState() {
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      setState(() {
-        searchEnabled = !searchEnabled;
-      });
-    });
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +18,8 @@ class _Home extends State<StatefulWidget>{
         child: Column(
           children: [
             GestureDetector(
-              onTap: search,
+              onTap: () => Navigator.push(context, MaterialPageRoute(builder:
+                  (context) => const SelectDrawing())),
               child: Container(
                 child: Text("ПОИСК"),
                 height: 40,
@@ -50,7 +34,6 @@ class _Home extends State<StatefulWidget>{
               ),
             ),
             GestureDetector(
-              onTap: search,
               child: Container(
                 child: Text("СКАНИРОВАТЬ"),
                 height: 40,
@@ -69,7 +52,6 @@ class _Home extends State<StatefulWidget>{
           mainAxisAlignment: MainAxisAlignment.end,
         ),
         duration: const Duration(milliseconds: 200),
-        height: searchEnabled ? 180 : 80,
       ),
       margin: const EdgeInsets.all(20.0)
     );
