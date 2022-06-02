@@ -75,7 +75,8 @@ class _Home extends State<StatefulWidget>{
                   ),
                   Expanded(
                     child: GestureDetector(
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Info())),
+                        onTap: () => Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => const SelectDrawing())),
                         child: Container(
                           child: Row(
                             children: [
