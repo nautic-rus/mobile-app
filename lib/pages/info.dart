@@ -186,7 +186,8 @@ class _Info extends State<StatefulWidget>{
                   Align(
                     alignment: Alignment.bottomLeft,
                     child: Text(
-                      'г. СПб, ул. Кронштадтская, дом 9, корпус 4, стр 1, офис 303',
+                      'г. СПб, ул. Кронштадтская, дом 9, корпус 4, стр 1, '
+                          'офис 303',
                       style: TextStyle(
                         fontFamily: 'MontserratAlternates',
                         fontSize: 16,
